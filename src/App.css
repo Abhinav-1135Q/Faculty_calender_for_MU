@@ -1,0 +1,821 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.background-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.login-page {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center; 
+  padding-right: 5%; 
+  background-image: url('/src/assets/MU_Building_2_12.webp'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  justify-content: flex-end;
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  background: rgba(57, 55, 55, 0.7) !important; /* Enforce semi-transparent black background */
+  padding: 30px !important; /* Enforce padding */
+  border-radius: 10px !important; /* Enforce rounded corners */
+  color: white
+   !important; /* Enforce white text color */
+  width: 350px !important; /* Enforce width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; /* Enforce shadow */
+  text-align: center; /* Center-align text */
+}
+
+.login-box h2 {
+  font-size: 18px; /* Increased font size */
+  margin-bottom: 20px; /* Adjusted spacing */
+  font-weight: bold; /* Bold text */
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px; /* Adjusted font size */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for inputs */
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: #007bff; /* Blue background */
+  color: white; /* White text */
+  font-weight: bold;
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 14px; /* Adjusted font size */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.login-btn:hover {
+  background: #0056b3; /* Darker blue on hover */
+}
+
+.forgot-password {
+  margin-top: 15px; /* Adjusted spacing */
+  font-size: 14px; /* Adjusted font size */
+  color: #007bff; /* Blue text */
+  text-decoration: none; /* Removed underline */
+}
+
+.forgot-password:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+#error-message {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  display: none;
+}
+
+
+header {
+  background-color: #e63946; /* Updated red color for header */
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between logo and other elements */
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 3px solid white;
+}
+
+#top-bar {
+  padding-top: 82px; /* Add padding to push content below the fixed header */
+}
+
+.menu-sidebar ul {
+  margin-top: 1rem; /* Add spacing between the header and the menu items */
+}
+
+.menu-sidebar ul li {
+  margin-bottom: 1rem; /* Add spacing between menu items */
+}
+
+.logo {
+  background-image: url('/src/assets/MU Logo.jpeg'); /* Set the MU Logo as background */
+  background-size: contain; /* Ensure the image fits within the container */
+  background-repeat: no-repeat; /* Prevent tiling */
+  background-position: center; /* Center the image */
+  height: 50px; /* Set a fixed height */
+  width: 100px; /* Set a fixed width */
+  margin-left: 20px; /* Add gap between the menu icon and the logo */
+}
+
+/* search-bar {
+  flex-grow: 1;
+  margin-left: 20px;
+  padding: 10px;
+  width: 300px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: #f8f9fa;  Light background for search bar 
+  color: black;
+}  */
+
+.settings-icon {
+  margin-left: auto;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 20px; /* Increased size for better visibility */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 82px);
+  position: fixed;
+  top: 82px;
+  left: 0;
+  bottom: 0;
+  border-right: 3px solid black;
+}
+
+.user-profile {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #e0e0e0; /* Light gray background for profile section */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.user-profile img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid black;
+  padding: 3px;
+}
+
+.nav ul {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+}
+
+.nav ul li {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: black; /* This sets the text color to black */
+  font-weight: bold;
+  display: block;
+  padding: 10px;
+}
+
+.ul li h3 {
+  font-size: 18px;
+  margin: 0;
+  color: #000;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 2px solid black;
+  padding: 12px;
+  text-align: center;
+  font-size: 18px;
+}
+
+th {
+  background: #ddd;
+  font-weight: bold;
+  padding: 15px;
+}
+
+td {
+  background: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #e6e6e6;
+}
+
+table caption {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#day-selector {
+  padding: 10px;
+  border: 2px solid black;
+  font-size: 18px;
+}
+
+#back-to-dashboard {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+#back-to-dashboard:hover {
+  background-color: darkred;
+}
+
+#meetings-page {
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.meeting-slots-page {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: calc(100vh - 82px); /* Full viewport height minus header */
+  background-color: #ffffff; /* Light background for light mode */
+  color: #000000; /* Black text for light mode */
+}
+
+/* Dark mode styles for the Meeting Slots page */
+body.dark-mode .meeting-slots-page {
+  background-color: #121212; /* Black background for dark mode */
+  color: #ffffff; /* White text for better contrast */
+}
+
+body.dark-mode .meeting-slots-container {
+  background-color: #121212; /* Slightly lighter black for dark mode */
+  border: 1px solid #444; /* Dark border for dark mode */
+}
+
+.meetings-container {
+  border: 10px solid red;
+  border-radius: 15px;
+  background: white;
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.meeting-box {
+  display: flex;
+  justify-content: space-between;
+  background: gray;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+@media (max-width: 768px) {
+  #timetable-page {
+    width: 95%;
+    height: auto;
+    padding: 20px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+}
+
+#home-page {
+  padding-top: 82px; /* Push content below the fixed header */
+}
+
+/* Dark mode styles for the timetable section */
+body.dark-mode #home-page .tables-container {
+  background-color: #121212; /* Dark background for timetable section */
+  color: #ffffff; /* White text for better contrast */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  padding: 20px; /* Optional: Add padding for better spacing */
+}
+
+body.dark-mode #home-page .timetable-table th,
+body.dark-mode #home-page .timetable-table td {
+  background-color: #1e1e1e; /* Darker background for table cells */
+  color: #ffffff; /* White text for table content */
+  border-color: #444; /* Darker border for table cells */
+}
+
+body.dark-mode #home-page .timetable-table tr:nth-child(even) {
+  background-color: #2a2a2a; /* Slightly lighter background for even rows */
+}
+
+/* Ensure menu-sidebar content does not overlap with the header */
+.menu-sidebar {
+  position: fixed;
+  top: 84px; /* Start below the header */
+  left: 0;
+  width: 15rem; /* Equivalent to w-64 */
+  height: calc(100% - 84px); /* Adjust height to account for the header */
+  background-color: var(--sidebar-bg, #ffffff); /* Light or dark sidebar background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  z-index: 50;
+  border-right: 4px solid var(--sidebar-border, #ddd); /* Light or dark border */
+  overflow-y: auto;
+}
+
+body.dark-mode .menu-sidebar {
+  --sidebar-bg: #2a2a2a; /* Dark sidebar background */
+  --sidebar-border: #444; /* Dark border */
+}
+
+.menu-sidebar h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--sidebar-text, #000); /* Light or dark text color */
+}
+
+body.dark-mode .menu-sidebar h2 {
+  --sidebar-text: #fff; /* White text for dark mode */
+}
+
+.menu-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-sidebar ul li {
+  margin-bottom: 1rem;
+}
+
+.menu-sidebar ul li a {
+  text-decoration: none;
+  color: var(--link-color, #007bff); /* Light or dark link color */
+  font-weight: bold;
+}
+
+body.dark-mode .menu-sidebar ul li a {
+  --link-color: #80bfff; /* Light blue for dark mode */
+}
+
+.Menu-icon {
+  font-size: 28px; /* Slightly larger font size for better visibility */
+  padding: 10px; /* Adjust padding for a balanced clickable area */
+  background: none;
+  border: 2px solid white; /* Add a border for better visibility */
+  border-radius: 5px; /* Rounded corners for a cleaner look */
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease, background-color 0.2s ease; /* Add hover effect */
+}
+
+.Menu-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  background-color: rgba(255, 255, 255, 0.2); /* Add a subtle background on hover */
+}
+
+.settings-sidebar {
+  position: fixed;
+  top: 84px; /* Start below the header */
+  right: 0;
+  width: 15rem; /* Equivalent to w-64 */
+  height: calc(100% - 84px); /* Adjust height to account for the header */
+  background-color: var(--sidebar-bg, #ffffff); /* Light or dark sidebar background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  z-index: 50;
+  border-left: 4px solid var(--sidebar-border, #ddd); /* Light or dark border */
+  overflow-y: auto;
+}
+
+body.dark-mode .settings-sidebar {
+  --sidebar-bg: #2a2a2a; /* Dark sidebar background */
+  --sidebar-border: #444; /* Dark border */
+}
+
+.settings-sidebar h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--sidebar-text, #000); /* Light or dark text color */
+}
+
+body.dark-mode .settings-sidebar h2 {
+  --sidebar-text: #fff; /* White text for dark mode */
+}
+
+.settings-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.settings-sidebar ul li {
+  margin-bottom: 1rem;
+}
+
+.settings-sidebar ul li button {
+  background: none;
+  border: none;
+  color: var(--button-color, #007bff); /* Light or dark button color */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+body.dark-mode .settings-sidebar ul li button {
+  --button-color: #80bfff; /* Light blue for dark mode */
+}
+
+/* Light Mode (default) */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.settings-sidebar {
+  background-color: var(--sidebar-bg, white);
+  color: var(--sidebar-text, black);
+}
+
+body.dark-mode .settings-sidebar {
+  --sidebar-bg: #1e1e1e;
+  --sidebar-text: #ffffff;
+}
+
+.timetable-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timetable-entry {
+  border: 1px solid #0c0707;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #0f0909;
+}
+
+.timetable-entry p {
+  margin: 5px 0;
+}
+
+.timetable-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.timetable-table th,
+.timetable-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.timetable-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.timetable-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.timetable-section {
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px;
+  max-width: 800px; /* Limit maximum width */
+  background-color: #0c0404;
+  border: 1px solid #0b0606;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(34, 30, 30, 0.1);
+  text-align: center; /* Center-align text inside the section */
+}
+
+.timetable-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #f4e8e8;
+}
+
+.timetable-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.timetable-table th,
+.timetable-table td {
+  border: 1px solid #cfbfbf;
+  padding: 12px;
+  text-align: center;
+}
+
+.timetable-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  color: #555;
+}
+
+.timetable-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.timetable-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.tables-container {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Horizontal center */
+  align-items: center;     /* Vertical center */
+  background: #f0eaea;
+  border: 10px solid red;
+  padding: 30px;
+  width: 100vw;
+  height: 100vh;
+  box-shadow: 5px 5px 15px rgba(202, 189, 189, 0.2);
+  overflow: auto;
+  position: fixed;
+  top: 45px; /* Adjusted to account for the header */
+  left: 0;
+  z-index: 10;
+}
+
+.filter-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-container input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filter-container button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter-container button:hover {
+  background-color: #0056b3;
+}
+
+.meeting-slots-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  width: 100%; /* Ensure responsiveness */
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background for light mode */
+  border: 1px solid #ddd; /* Light border for light mode */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.input-row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-row label {
+  flex: 1;
+  font-weight: bold;
+}
+
+.input-row input {
+  flex: 2;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.results-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.results-section {
+  flex: 1;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Dark mode styles for the boxes in Meeting Slots page */
+body.dark-mode .results-section {
+  background-color: #000000; /* Black background for the boxes */
+  color: #ffffff; /* White text for better contrast */
+  border: 1px solid #444; /* Optional: Add a border for better visibility */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Optional: Add a subtle shadow */
+}
+
+.results-section h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.results-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.results-section ul li {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.results-section ul li:last-child {
+  border-bottom: none;
+}
+
+.calendar-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: var(--page-bg, #f9f9f9); /* Light or dark background */
+  margin: 0;
+  padding: 0;
+}
+
+body.dark-mode .calendar-page {
+  --page-bg: #1e1e1e; /* Dark background for dark mode */
+}
+
+.calendar-container {
+  width: 90%;
+  max-width: 800px; /* Limit maximum width */
+  background-color: var(--container-bg, #ffffff); /* Light or dark container background */
+  border: 1px solid var(--container-border, #ddd); /* Light or dark border */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+body.dark-mode .calendar-container {
+  --container-bg: #2a2a2a; /* Dark container background */
+  --container-border: #444; /* Dark border */
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--title-color, #000); /* Light or dark title color */
+}
+
+body.dark-mode .calendar-title {
+  --title-color: #fff; /* White title color for dark mode */
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columns for days and dates */
+  gap: 1px; /* Add spacing between grid items */
+  background-color: var(--grid-bg, #ddd); /* Light or dark grid background */
+}
+
+body.dark-mode .calendar-grid {
+  --grid-bg: #444; /* Dark grid background */
+}
+
+.calendar-day-header,
+.calendar-date {
+  background-color: var(--cell-bg, #ffffff); /* Light or dark cell background */
+  border: 1px solid var(--cell-border, #ddd); /* Light or dark cell border */
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px; /* Optional: Add rounded corners */
+  color: var(--cell-text, #000); /* Light or dark text color */
+}
+
+body.dark-mode .calendar-day-header,
+body.dark-mode .calendar-date {
+  --cell-bg: #2a2a2a; /* Dark cell background */
+  --cell-border: #444; /* Dark cell border */
+  --cell-text: #fff; /* White text color for dark mode */
+}
+
+.calendar-date.current-date {
+  background-color: var(--current-date-bg, #cce5ff); /* Light or dark current date background */
+  font-weight: bold;
+  color: var(--current-date-color, #004085); /* Light or dark current date text color */
+  border: 2px solid var(--current-date-border, #007bff); /* Highlight border for the current date */
+}
+
+body.dark-mode .calendar-date.current-date {
+  --current-date-bg: #444; /* Dark current date background */
+  --current-date-color: #fff; /* White text color for dark mode */
+  --current-date-border: #007bff; /* Highlight border for dark mode */
+}
+
+.event-indicator {
+  width: 8px;
+  height: 8px;
+  background-color: var(--event-color, #007bff); /* Light or dark event indicator */
+  border-radius: 50%;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+body.dark-mode .event-indicator {
+  --event-color: #ffcc00; /* Yellow event indicator for dark mode */
+}  
+body.dark-mode #home-page {
+  background-color: #000000; /* Black background for dark mode */
+}
